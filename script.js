@@ -1,4 +1,4 @@
-const API_KEY = "YOUR_API_KEY";
+const API_KEY = "YOUR_OPENWEATHERMAP_API_KEY";
 
 const cityInput = document.getElementById("cityInput");
 const searchBtn = document.getElementById("searchBtn");
@@ -367,7 +367,7 @@ if (!hasApiKey()) {
 
 function hasApiKey() {
 
-    return API_KEY && API_KEY !== "YOUR_API_KEY";
+    return API_KEY && !API_KEY.startsWith("YOUR_");
 
 }
 
