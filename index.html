@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Outside, Today</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="brand-block">
+                <p class="eyebrow">DAILY WEATHER BRIEF</p>
+                <h1>Outside, Today</h1>
+                <p>A simple read on what is happening beyond the window.</p>
+            </div>
+
+            <button id="themeBtn" class="theme-btn" type="button" aria-label="Switch to dark theme">🌙</button>
+        </header>
+
+        <!-- Search -->
+        <section class="search-section">
+
+            <label class="sr-only" for="cityInput">Search for a city</label>
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Search city..."
+                autocomplete="address-level2"
+            >
+
+            <button id="searchBtn" type="button">
+                <span aria-hidden="true">⌕</span> Search
+            </button>
+
+            <button id="locationBtn" class="location-button" type="button">
+                <span aria-hidden="true">⌖</span> My Location
+            </button>
+
+        </section>
+
+        <!-- Error -->
+        <div id="error" class="error" role="alert" aria-live="polite"></div>
+        <div id="modeNotice" class="mode-notice" role="status"></div>
+
+        <!-- Loading -->
+        <div id="loading" class="loading hidden" role="status" aria-live="polite">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+        <!-- Main Weather -->
+        <main id="weatherContainer" class="hidden">
+
+            <section class="current-weather" aria-labelledby="cityName">
+
+                <div class="location">
+                    <h2 id="cityName">City</h2>
+                    <p id="date"></p>
+                        <p id="weatherAdvice" class="weather-advice"></p>
+                </div>
+
+                <div class="weather-main">
+
+                    <img id="weatherIcon" src="" alt="Weather">
+
+                    <div>
+                        <h3 id="temperature">--°C</h3>
+                        <p id="description">--</p>
+                    </div>
+
+                </div>
+
+                <div class="high-low">
+                    <span>
+                        ↑ <strong id="maxTemp">--</strong>
+                    </span>
+
+                    <span>
+                        ↓ <strong id="minTemp">--</strong>
+                    </span>
+                </div>
+
+            </section>
+
+            <!-- Weather Details -->
+            <section class="details-grid">
+
+                <div class="detail-card">
+                    <span>💧</span>
+                    <p>Humidity</p>
+                    <strong id="humidity">--%</strong>
+                </div>
+
+                <div class="detail-card">
+                    <span>💨</span>
+                    <p>Wind Speed</p>
+                    <strong id="wind">-- m/s</strong>
+                </div>
+
+                <div class="detail-card">
+                    <span>🌡️</span>
+                    <p>Feels Like</p>
+                    <strong id="feelsLike">--°C</strong>
+                </div>
+
+                <div class="detail-card">
+                    <span>👁️</span>
+                    <p>Visibility</p>
+                    <strong id="visibility">-- km</strong>
+                </div>
+
+                <div class="detail-card">
+                    <span>🌅</span>
+                    <p>Sunrise</p>
+                    <strong id="sunrise">--</strong>
+                </div>
+
+                <div class="detail-card">
+                    <span>🌇</span>
+                    <p>Sunset</p>
+                    <strong id="sunset">--</strong>
+                </div>
+
+            </section>
+
+            <!-- Forecast -->
+            <section class="forecast-section" aria-labelledby="forecastTitle">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">LOOKING AHEAD</p>
+                        <h2 id="forecastTitle">The week ahead</h2>
+                    </div>
+                    <span class="section-mark" aria-hidden="true">↗</span>
+                </div>
+
+                <div id="forecast" class="forecast-grid"></div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Powered by OpenWeatherMap</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
